@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import HomePage from './pages/HomePage'
 import GameListPage from './pages/GameListPage'
 import GameDetailPage from './pages/GameDetailPage'
@@ -67,6 +68,7 @@ function App() {
         </main>
         <Footer />
       </BrowserRouter>
+      <Analytics />
     </div>
   )
 }

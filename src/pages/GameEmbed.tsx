@@ -5,7 +5,7 @@ const gamesList = [
     id: 1,
     title: '2048',
     description: 'Classic number puzzle game. Merge identical numbers to reach 2048.',
-    embedUrl: '/games/2048-source/index.html',
+    embedUrl: '/games/2048.html',
     isExternal: false,
     needsFullPage: true
   },

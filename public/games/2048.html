@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0;url=/games/2048-source/index.html">
-    <title>2048游戏 - 重定向中</title>
+    <title>2048 Game - Redirecting</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,15 +37,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>2048游戏</h1>
-        <p>正在跳转到2048游戏页面...</p>
-        <p>如果没有自动跳转，请点击下面的按钮：</p>
-        <a href="/games/2048-source/index.html" class="button">立即前往2048游戏</a>
+        <h1>2048 Game</h1>
+        <p>Redirecting to 2048 game page...</p>
+        <p>If not automatically redirected, please click the button below:</p>
+        <a href="/games/2048-source/index.html" class="button">Go to 2048 Game</a>
     </div>
     
     <script>
-        // 确保跳转发生
-        window.location.href = "/games/2048-source/index.html";
+        // Ensure redirection happens immediately
+        window.onload = function() {
+            window.location.href = "/games/2048-source/index.html";
+        }
     </script>
 </body>
 </html> 

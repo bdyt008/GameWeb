@@ -1,74 +1,74 @@
 import { Link } from 'react-router-dom'
 
-// 简化的游戏数据
+// Simplified game data
 const featuredGames = [
   {
     id: 1,
-    title: '赛博朋克2077',
+    title: 'Cyberpunk 2077',
     developer: 'CD Projekt Red',
-    genre: '角色扮演',
+    genre: 'RPG',
     rating: 4.5,
-    imageUrl: 'https://via.placeholder.com/600x350?text=赛博朋克2077'
+    imageUrl: 'https://via.placeholder.com/600x350?text=Cyberpunk2077'
   },
   {
     id: 2,
-    title: '原神',
-    developer: '米哈游',
-    genre: '开放世界',
+    title: 'Genshin Impact',
+    developer: 'miHoYo',
+    genre: 'Open World',
     rating: 4.7,
-    imageUrl: 'https://via.placeholder.com/600x350?text=原神'
+    imageUrl: 'https://via.placeholder.com/600x350?text=GenshinImpact'
   },
   {
     id: 3,
-    title: '艾尔登法环',
+    title: 'Elden Ring',
     developer: 'FromSoftware',
-    genre: '动作角色扮演',
+    genre: 'Action RPG',
     rating: 4.9,
-    imageUrl: 'https://via.placeholder.com/600x350?text=艾尔登法环'
+    imageUrl: 'https://via.placeholder.com/600x350?text=EldenRing'
   }
 ]
 
 const latestNews = [
   {
     id: 1,
-    title: '《艾尔登法环》DLC"黑影之地"将于下月发布',
+    title: 'Elden Ring DLC "Shadow of the Erdtree" releases next month',
     date: '2023-05-20',
-    category: '新闻',
-    imageUrl: 'https://via.placeholder.com/300x200?text=艾尔登法环DLC'
+    category: 'News',
+    imageUrl: 'https://via.placeholder.com/300x200?text=EldenRingDLC'
   },
   {
     id: 2,
-    title: '全新次世代主机将于年底发布，性能提升50%',
+    title: 'New generation console to be released by year end, 50% performance boost',
     date: '2023-05-18',
-    category: '硬件',
-    imageUrl: 'https://via.placeholder.com/300x200?text=次世代主机'
+    category: 'Hardware',
+    imageUrl: 'https://via.placeholder.com/300x200?text=NextGenConsole'
   },
   {
     id: 3,
-    title: '《我的世界》庆祝15周年，推出特别版本及活动',
+    title: 'Minecraft celebrates 15th anniversary with special edition and events',
     date: '2023-05-15',
-    category: '新闻',
-    imageUrl: 'https://via.placeholder.com/300x200?text=我的世界15周年'
+    category: 'News',
+    imageUrl: 'https://via.placeholder.com/300x200?text=Minecraft15thAnniversary'
   }
 ]
 
 const HomePage = () => {
   return (
     <div className="space-y-8">
-      {/* 英雄区域 */}
+      {/* Hero Section */}
       <section className="bg-primary-700 text-white rounded-lg p-8 text-center">
-        <h1 className="text-4xl font-bold mb-4">探索游戏的无限可能</h1>
-        <p className="text-xl mb-6">在GameWeb，您可以找到最新、最热门的游戏资讯、评测和游戏推荐。</p>
+        <h1 className="text-4xl font-bold mb-4">Explore Endless Gaming Possibilities</h1>
+        <p className="text-xl mb-6">At GameWeb, you can find the latest and most popular game news, reviews, and recommendations.</p>
         <div className="flex justify-center gap-4">
           <Link to="/games" className="bg-white text-primary-700 px-6 py-2 rounded-md font-bold">
-            浏览游戏库
+            Browse Games
           </Link>
         </div>
       </section>
 
-      {/* 精选游戏 */}
+      {/* Featured Games */}
       <section>
-        <h2 className="text-2xl font-bold mb-6">精选游戏</h2>
+        <h2 className="text-2xl font-bold mb-6">Featured Games</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredGames.map(game => (
             <div key={game.id} className="bg-white dark:bg-secondary-800 rounded-lg shadow-md overflow-hidden">
@@ -89,12 +89,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 最新资讯 */}
+      {/* Latest News */}
       <section>
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold">最新资讯</h2>
+          <h2 className="text-3xl font-bold">Latest News</h2>
           <Link to="/news" className="text-primary-600 hover:text-primary-700 font-medium">
-            查看所有资讯
+            View All News
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -117,7 +117,7 @@ const HomePage = () => {
                   to={`/news/${news.id}`}
                   className="inline-block text-primary-600 hover:text-primary-700 font-medium"
                 >
-                  阅读全文
+                  Read More
                 </Link>
               </div>
             </div>
@@ -125,17 +125,17 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 订阅区域 */}
+      {/* Subscribe Section */}
       <section className="bg-secondary-100 dark:bg-secondary-800 rounded-xl p-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">订阅获取最新游戏资讯</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Subscribe for Latest Gaming Updates</h2>
           <p className="text-secondary-600 dark:text-secondary-300 mb-6">
-            第一时间获取最新游戏发布、优惠折扣和独家内容的通知
+            Get notified about new game releases, discounts, and exclusive content
           </p>
           <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
             <input 
               type="email" 
-              placeholder="您的邮箱地址" 
+              placeholder="Your email address" 
               className="flex-grow px-4 py-3 rounded-lg border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
               required
             />
@@ -143,7 +143,7 @@ const HomePage = () => {
               type="submit"
               className="btn btn-primary px-6"
             >
-              订阅
+              Subscribe
             </button>
           </form>
         </div>

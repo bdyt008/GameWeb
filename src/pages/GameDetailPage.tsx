@@ -1,50 +1,50 @@
 import { useParams, Link } from 'react-router-dom'
 
-// 简化的游戏数据
+// Simplified game data
 const gamesData = [
   {
     id: 1,
-    title: '赛博朋克2077',
+    title: 'Cyberpunk 2077',
     developer: 'CD Projekt Red',
-    genre: '角色扮演',
+    genre: 'RPG',
     platforms: ['PC', 'PS5', 'XSX'],
     rating: 4.5,
-    imageUrl: 'https://via.placeholder.com/700x400?text=赛博朋克2077',
+    imageUrl: 'https://via.placeholder.com/700x400?text=Cyberpunk2077',
     releaseDate: '2020-12-10',
-    description: '《赛博朋克2077》是一款开放世界动作冒险RPG游戏，故事发生在夜之城，一个充满力量、魅力和身体改造痴迷的大都市。'
+    description: 'Cyberpunk 2077 is an open-world action-adventure RPG set in Night City, a megalopolis obsessed with power, glamour, and body modification.'
   },
   {
     id: 2,
-    title: '原神',
-    developer: '米哈游',
-    genre: '开放世界',
+    title: 'Genshin Impact',
+    developer: 'miHoYo',
+    genre: 'Open World',
     platforms: ['PC', 'PS5', 'Mobile'],
     rating: 4.7,
-    imageUrl: 'https://via.placeholder.com/700x400?text=原神',
+    imageUrl: 'https://via.placeholder.com/700x400?text=GenshinImpact',
     releaseDate: '2020-09-28',
-    description: '《原神》是一款开放世界冒险RPG。在游戏中，玩家将扮演一位名为"旅行者"的神秘角色，在提瓦特大陆上寻找失散的亲人并揭开世界的神秘。'
+    description: 'Genshin Impact is an open-world adventure RPG. In the game, players will play as a mysterious character known as the "Traveler," searching for lost siblings on the continent of Teyvat and uncovering the mysteries of the world.'
   },
   {
     id: 3,
-    title: '艾尔登法环',
+    title: 'Elden Ring',
     developer: 'FromSoftware',
-    genre: '动作角色扮演',
+    genre: 'Action RPG',
     platforms: ['PC', 'PS5', 'XSX'],
     rating: 4.9,
-    imageUrl: 'https://via.placeholder.com/700x400?text=艾尔登法环',
+    imageUrl: 'https://via.placeholder.com/700x400?text=EldenRing',
     releaseDate: '2022-02-25',
-    description: '《艾尔登法环》是FromSoftware开发的一款动作RPG游戏，由《黑暗之魂》系列创作者宫崎英高与《权力的游戏》作者乔治·R·R·马丁联合创作。'
+    description: 'Elden Ring is an action RPG developed by FromSoftware, created by Hidetaka Miyazaki, the creator of the Dark Souls series, in collaboration with George R.R. Martin, the author of "Game of Thrones".'
   },
   {
     id: 4,
-    title: '塞尔达传说：王国之泪',
-    developer: '任天堂',
-    genre: '动作冒险',
+    title: 'Legend of Zelda: Tears of the Kingdom',
+    developer: 'Nintendo',
+    genre: 'Action Adventure',
     platforms: ['Switch'],
     rating: 4.8,
-    imageUrl: 'https://via.placeholder.com/700x400?text=塞尔达传说',
+    imageUrl: 'https://via.placeholder.com/700x400?text=ZeldaTOTK',
     releaseDate: '2023-05-12',
-    description: '《塞尔达传说：王国之泪》是《塞尔达传说：旷野之息》的续作，玩家将再次扮演林克，探索更加广阔的海拉鲁世界。'
+    description: 'The Legend of Zelda: Tears of the Kingdom is the sequel to The Legend of Zelda: Breath of the Wild, where players once again take on the role of Link to explore an even more expansive Hyrule world.'
   }
 ]
 
@@ -52,22 +52,22 @@ const GameDetailPage = () => {
   const { id } = useParams<{ id: string }>()
   const gameId = parseInt(id || '0')
   
-  // 查找游戏
+  // Find game
   const game = gamesData.find(game => game.id === gameId)
   
-  // 未找到游戏
+  // Game not found
   if (!game) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold mb-2">未找到游戏</h2>
+        <h2 className="text-2xl font-bold mb-2">Game Not Found</h2>
         <p className="text-secondary-600 dark:text-secondary-400 mb-4">
-          抱歉，无法找到ID为 {id} 的游戏。
+          Sorry, we couldn't find a game with ID {id}.
         </p>
         <Link 
           to="/games" 
           className="inline-block px-4 py-2 bg-primary-600 text-white rounded hover:bg-primary-700"
         >
-          返回游戏列表
+          Back to Game List
         </Link>
       </div>
     )
@@ -75,7 +75,7 @@ const GameDetailPage = () => {
 
   return (
     <div>
-      {/* 游戏头部信息 */}
+      {/* Game header information */}
       <div className="bg-white dark:bg-secondary-800 rounded-lg shadow-sm overflow-hidden mb-6">
         <img 
           src={game.imageUrl} 
@@ -101,14 +101,14 @@ const GameDetailPage = () => {
           </div>
           
           <div className="mt-4">
-            <h2 className="text-xl font-bold mb-2">游戏简介</h2>
+            <h2 className="text-xl font-bold mb-2">Game Description</h2>
             <p className="text-secondary-700 dark:text-secondary-300">
               {game.description}
             </p>
           </div>
           
           <div className="mt-4">
-            <h2 className="text-xl font-bold mb-2">可用平台</h2>
+            <h2 className="text-xl font-bold mb-2">Available Platforms</h2>
             <div className="flex flex-wrap gap-2">
               {game.platforms.map(platform => (
                 <span 
@@ -123,14 +123,14 @@ const GameDetailPage = () => {
         </div>
       </div>
       
-      {/* 返回按钮 */}
+      {/* Back button */}
       <div className="mb-8">
         <Link 
           to="/games" 
           className="inline-flex items-center text-primary-600 hover:text-primary-700"
         >
           <span>←</span>
-          <span className="ml-1">返回游戏列表</span>
+          <span className="ml-1">Back to Game List</span>
         </Link>
       </div>
     </div>

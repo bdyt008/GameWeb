@@ -8,21 +8,21 @@ import NotFoundPage from './pages/NotFoundPage'
 import GameEmbed from './pages/GameEmbed'
 import GameDevPage from './pages/GameDevPage'
 
-// 简化的Header组件
+// Simplified Header component
 const Header = ({ darkMode, toggleDarkMode }: { darkMode: boolean; toggleDarkMode: () => void }) => {
   return (
     <header className="bg-white dark:bg-secondary-800 shadow-sm p-4">
       <div className="container mx-auto flex items-center justify-between">
         <h1 className="text-xl font-bold text-primary-600">GameWeb</h1>
         <nav className="flex items-center space-x-4">
-          <a href="/" className="hover:text-primary-600">首页</a>
-          <a href="/games" className="hover:text-primary-600">游戏库</a>
-          <a href="/play" className="hover:text-primary-600">在线游戏</a>
-          <a href="/dev" className="hover:text-primary-600">开发者</a>
+          <a href="/" className="hover:text-primary-600">Home</a>
+          <a href="/games" className="hover:text-primary-600">Games</a>
+          <a href="/play" className="hover:text-primary-600">Play Online</a>
+          <a href="/dev" className="hover:text-primary-600">Developers</a>
           <button 
             onClick={toggleDarkMode}
             className="p-2 rounded-full"
-            aria-label={darkMode ? '切换到浅色模式' : '切换到深色模式'}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             {darkMode ? '☀️' : '🌙'}
           </button>
@@ -32,12 +32,12 @@ const Header = ({ darkMode, toggleDarkMode }: { darkMode: boolean; toggleDarkMod
   )
 }
 
-// 简化的Footer组件
+// Simplified Footer component
 const Footer = () => {
   return (
     <footer className="bg-secondary-800 text-white p-4 text-center">
       <div className="container mx-auto">
-        <p>&copy; {new Date().getFullYear()} GameWeb. 保留所有权利。</p>
+        <p>&copy; {new Date().getFullYear()} GameWeb. All rights reserved.</p>
       </div>
     </footer>
   )
@@ -46,7 +46,7 @@ const Footer = () => {
 function App() {
   const [darkMode, setDarkMode] = useState(false)
 
-  // 切换暗色模式
+  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
     document.documentElement.classList.toggle('dark')
